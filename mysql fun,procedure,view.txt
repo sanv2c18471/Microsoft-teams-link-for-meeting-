@@ -1,0 +1,194 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `asc_order_storepro`()
+BEGIN
+select * from student order by Stud_name desc;
+END
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `asc_order_storepro`()
+BEGIN
+select * from student order by Stud_name desc;
+END
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `concatString_storepro`(in a varchar(20), in b varchar(20),out c varchar(20))
+BEGIN
+set c=concat(a,b);
+END
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Lowest_Product_Count`()
+BEGIN
+select min(Cnt)  from Product;
+END
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure`(in a int ,in b int,out c int)
+BEGIN
+set c=a+b;
+END
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get Traveller`()
+BEGIN
+select * from traveller;
+END
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `high_sal`(In high int, out amount int)
+BEGIN
+select salary into amount from employees where salary = high;
+END
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `max_amount`()
+BEGIN
+select max(E_amnt) from Expense;
+END
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `salary`(In high int)
+BEGIN
+select salary from employees;
+END
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`localhost` 
+    SQL SECURITY DEFINER
+VIEW `stu_v1` AS
+    SELECT 
+        `student1`.`St_Nmae` AS `St_Nmae`,
+        `student1`.`mark` AS `mark`
+    FROM
+        `student1`
+		
+		
+		
+		
+		
+		
+		CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`localhost` 
+    SQL SECURITY DEFINER
+VIEW `view_v1` AS
+    SELECT 
+        `user`.`U_id` AS `U_id`,
+        `user`.`U_name` AS `U_name`,
+        `user`.`U_email` AS `U_Email`
+    FROM
+        `user`
+		
+		
+		
+		
+		
+		
+		
+		
+CREATE DEFINER=`root`@`localhost` FUNCTION `Concat_two_string`(a varchar(10) , b varchar(10)) RETURNS varchar(11) CHARSET latin1
+BEGIN
+
+RETURN concat(a,b);
+END
+
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `Differ_of_two_numbers`(a int(2) , b int(2)) RETURNS int(11)
+BEGIN
+
+RETURN a-b;
+END
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `Div_of_two_numbers`(a int , b int) RETURNS int(11)
+BEGIN
+
+RETURN a/b;
+END
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `mark`(a int(3)) RETURNS varchar(11) CHARSET latin1
+BEGIN
+declare status varchar(20);
+if a>67 then 
+set status= 'Distinction';
+elseif a<=50 then 
+set status= 'Second class';
+elseif a>50 and a<=65 then 
+set status= 'First class';
+end if;
+return status;
+END
+
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `maxi`(a int , b int) RETURNS int(11)
+BEGIN
+
+RETURN greatest(a,b);
+END
+
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `Mul_of_two_numbers`(a int , b int) RETURNS int(11)
+BEGIN
+
+RETURN a*b;
+END
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `salary`(a int(3)) RETURNS int(11)
+BEGIN
+RETURN a*2;
+END
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `Sum_of_two_numbers`(a int(3), b int (3)) RETURNS int(11)
+BEGIN
+
+RETURN a+b;
+END
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `T_nm_fun`(a varchar(20)) RETURNS int(11)
+BEGIN
+
+RETURN (select T_nm as trip_name from trip);
+END
